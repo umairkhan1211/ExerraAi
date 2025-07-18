@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffff;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,270 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+.shiny-text {
+  display: inline-block; /* Critical for animation */
+  background: linear-gradient(
+    120deg,
+    #ffffff 0%,
+    #ffb237 20%,
+    #ffffff 40%,
+    #ffb237 60%,
+    #ffffff 80%,
+    #ffb237 100%
+  );
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+@keyframes textBlurFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.blur-text-fade-in {
+  animation: textBlurFadeIn 1.2s ease-out forwards;
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes blurFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes floatSmoothly {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-23px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-brain {
+  animation:
+    blurFadeInUp 1.4s ease-out forwards,
+    floatSmoothly 3s ease-in-out infinite;
+}
+
+
+.animate-brain {
+  will-change: transform, opacity, filter;
+}
+.glow-text {
+  text-shadow: 0 0 12px rgba(255, 178, 55, 0.8);
+}
+
+
+@keyframes borderMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shiny-button {
+  background-color: transparent;
+  border: none;
+}
+
+.shiny-button .shiny-text {
+  background: linear-gradient(120deg, #fff, #ffb237, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s linear infinite;
+  display: inline-block;
+}
+
+/* Add these to your global CSS */
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes border-shine {
+  0% {
+    transform: translateX(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(0deg);
+  }
+}
+
+.shiny-button {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.shiny-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 178, 55, 0.4);
+}
+
+.shiny-button .shiny-text {
+  background: linear-gradient(120deg, #fff, #ffb237, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+}
+
+.animate-border-shine {
+  animation: border-shine 2.5s linear infinite;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 178, 55, 0.8),
+    transparent
+  );
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes fadeInSlow {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-slow {
+  animation: fadeInSlow 0.8s ease-out forwards;
+}
+
+/* Add delays for staggered effect */
+.animate-fade-in-delay-100 {
+  animation: fadeInSlow 0.8s ease-out forwards;
+  animation-delay: 0.1s; /* Slight delay */
+}
+
+.animate-fade-in-delay-200 {
+  animation: fadeInSlow 0.8s ease-out forwards;
+  animation-delay: 0.2s; /* More delay */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Optional: Add smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+
+@keyframes drift1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(30px, -40px) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes drift2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-50px, 30px) rotate(-180deg); }
+  100% { transform: translate(0, 0) rotate(-360deg); }
+}
+
+@keyframes drift3 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(20px, 50px) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+.animate-drift-1 {
+  animation: drift1 18s ease-in-out infinite;
+}
+.animate-drift-2 {
+  animation: drift2 22s ease-in-out infinite;
+}
+.animate-drift-3 {
+  animation: drift3 20s ease-in-out infinite;
 }
