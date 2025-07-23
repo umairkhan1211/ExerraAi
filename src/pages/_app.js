@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
 
 <Head>
         <title>Exerra AI</title>
-        <link rel="icon" type="image/png" href="images/exerra_ai_title.png" />
+        <link rel="icon" type="image/png" href="/images/exerra_ai_title.webp" />
         <meta
           name="description"
           content="Online Holy Quran Courses with Tajweed and Islamic Education."

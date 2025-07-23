@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { FaFacebook, FaGithub, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { Satisfy } from "next/font/google";
 
-
+const satisfy = Satisfy({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+});
 
 const socials = [
   {
@@ -26,7 +31,6 @@ const socials = [
   },
 ];
 
-
 export default function Header() {
   return (
     <div className="fixed top-0 left-0 w-full z-50 overflow-hidden ">
@@ -36,7 +40,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <Image
               alt="ExxerAiLogo"
-              src="/images/exerra_ai_title.png"
+              src="/images/exerra_ai_title.webp"
               width={65}
               height={65}
               className="object-contain blur-text-fade-in"
@@ -45,11 +49,11 @@ export default function Header() {
           </div>
           <div className="flex flex-col justify-center">
             <span
-              className="text-2xl font-bold tracking-widest whitespace-nowrap text-white max-sm:text-lg  max-md:text-xl blur-text-fade-in"
-              style={{ fontFamily: "Satisfy" }}
+              className={`text-2xl font-bold tracking-widest whitespace-nowrap text-white max-sm:text-lg max-md:text-xl blur-text-fade-in ${satisfy.className}`}
             >
               Exerra AI
             </span>
+            
           </div>
         </div>
 
@@ -72,20 +76,19 @@ export default function Header() {
           </button>
 
           {/* Social Icons */}
-{socials.map(({ name, link, icon: Icon }) => (
-  <a
-    key={name}
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-white hover:text-[#ffb237] transition duration-300 text-base border border-[#ffffff] p-2 rounded-lg"
-  >
-    <Icon />
-  </a>
-))}
-
-
-
+          <div className="flex space-x-2 max-sm:hidden">
+            {socials.map(({ name, link, icon: Icon }) => (
+              <a
+                key={name}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-[#ffb237] transition duration-300 text-base border border-[#ffffff] p-2 rounded-lg"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>

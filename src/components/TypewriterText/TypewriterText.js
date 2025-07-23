@@ -55,7 +55,7 @@ export default function TypewriterText() {
 
   return (
     <h2
-      className={`text-sm sm:text-base md:text-lg font-semibold text-center mt-4 w-full px-4 leading-normal ${rubik.className} blur-text-fade-in`}
+      className={`text-sm sm:text-base md:text-lg font-semibold text-center mt-12 w-full px-4 leading-normal ${rubik.className} blur-text-fade-in`}
     >
       <span className="text-white glow-text">We build </span>
       <span className="text-[#ffb237] glow-text">

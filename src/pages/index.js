@@ -13,8 +13,6 @@ const fascinate = Fascinate({
   display: "swap",
 });
 
-
-
 const socials = [
   {
     name: "facebook",
@@ -37,7 +35,6 @@ const socials = [
     icon: () => <FaLinkedinIn />,
   },
 ];
-
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -63,32 +60,32 @@ export default function Home() {
         {/* Automation Logos Floating */}
         <div className="absolute inset-0 z-10 pointer-events-none">
           <Image
-            src="/images/Zapier-logo.png"
+            src="/images/zapier-logo.webp"
             alt="Zapier Logo"
             width={90}
             height={90}
-            className="absolute top-[22%] left-[16%] opacity-70  animate-float"
+            className="absolute top-[22%] left-[16%] opacity-70 animate-float"
           />
           <Image
-            src="/images/make-logo.png"
+            src="/images/make-logo.webp"
             alt="n8n Logo"
             width={130}
             height={130}
-            className="absolute bottom-[24%] right-[5%] opacity-70  animate-float"
+            className="absolute bottom-[24%] right-[5%] opacity-70 animate-float"
           />
           <Image
-            src="/images/n8n-logo.png"
+            src="/images/n8n-logo.webp"
             alt="Make Logo"
             width={130}
             height={130}
-            className="absolute max-sm:top-[2%] top-[6%] right-[18%] opacity-70  animate-float"
+            className="absolute max-sm:top-[2%] top-[6%] right-[18%] opacity-70 animate-float"
           />
         </div>
 
         {/* Brain Image and Website Name */}
         <div className="fixed top-[48%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 flex flex-col items-center">
           <Image
-            src="/images/brain.png"
+            src="/images/brain.webp"
             alt="Center Image"
             width={520}
             height={520}
@@ -97,9 +94,7 @@ export default function Home() {
             priority
           />
           <h1
-            className={`${
-              fascinate.className
-            } relative text-7xl max-sm:text-7xl tracking-wide shiny-text left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full transition-all duration-700 ease-in-out ${
+            className={`${fascinate.className} text-7xl max-sm:text-5xl tracking-wide shiny-text text-center w-full font-bold transition-all duration-700 ease-in-out ${
               scrolled ? "opacity-0 -translate-y-10" : "opacity-100 fade-in-up"
             }`}
           >
@@ -115,38 +110,35 @@ export default function Home() {
         >
           <TypewriterText />
           <div className="flex flex-row space-x-3 mt-6 md:hidden">
-         {socials.map(({ name, link, icon: Icon }) => (
-  <a
-    key={name}
-    href={link}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-white hover:text-[#ffb237] transition duration-300 text-base border border-[#ffffff] p-2 rounded-lg"
-  >
-    <Icon />
-  </a>
-))}
-
-
+            {socials.map(({ name, link, icon: Icon }) => (
+              <a
+                key={name}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-[#ffb237] transition duration-300 text-base border border-[#ffffff] p-2 rounded-lg"
+              >
+                <Icon />
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Scroll Reveal Sections */}
+        {/* Responsive Scroll Reveal Sections */}
         <div className="fixed top-0 left-0 w-full h-full overflow-hidden z-10">
+          {/* Left Section */}
           <div
             className={`absolute top-14 left-0 w-1/2 h-full flex items-center justify-center transition-all duration-1000 ease-in-out ${
-              scrolled
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-full opacity-0"
+              scrolled ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
             }`}
           >
             <LeftSection />
           </div>
+
+          {/* Right Section */}
           <div
             className={`absolute top-14 right-0 w-1/2 h-full flex items-center justify-center transition-all duration-1000 ease-in-out ${
-              scrolled
-                ? "translate-x-0 opacity-100"
-                : "translate-x-full opacity-0"
+              scrolled ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
             }`}
           >
             <RightSection />
